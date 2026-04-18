@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="A plain-language breakdown of Uganda's Protection of Sovereignty Bill 2026 — and who it really affects."/>
+<meta property="og:title" content="Uganda's Sovereignty Bill — Who Does It Really Silence?"/>
+<meta property="og:description" content="Students. Startups. Aid workers. Journalists. A plain-language breakdown of Bill No. 13, 2026."/>
+<title>Uganda's Sovereignty Bill — Who Does It Really Silence?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#080a0f;
+  --surface:#0e1118;
+  --card:#13161f;
+  --border:#1e2330;
+  --red:#e63946;
+  --amber:#f4a261;
+  --cyan:#48cae4;
+  --text:#e8eaf0;
+  --muted:#6b7280;
+  --dim:#3d4455;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Crimson Pro',Georgia,serif;
+  font-size:18px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* ── GRID BACKGROUND ── */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:60px 24px;
+  z-index:1;
+  overflow:hidden;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(230,57,70,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.hero-eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.3em;
+  color:var(--red);
+  text-transform:uppercase;
+  margin-bottom:28px;
+  opacity:0;
+  animation:fadeUp 0.8s 0.1s ease forwards;
+}
+
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,12vw,9rem);
+  line-height:0.92;
+  letter-spacing:0.02em;
+  margin-bottom:12px;
+  opacity:0;
+  animation:fadeUp 0.8s 0.25s ease forwards;
+}
+
+.hero-title .accent{color:var(--red)}
+.hero-title .thin{color:var(--dim);font-size:0.6em}
+
+.hero-sub{
+  font-size:clamp(1rem,2.5vw,1.3rem);
+  font-weight:300;
+  color:var(--muted);
+  max-width:560px;
+  margin:0 auto 48px;
+  font-style:italic;
+  opacity:0;
+  animation:fadeUp 0.8s 0.4s ease forwards;
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  opacity:0;
+  animation:fadeUp 0.8s 0.55s ease forwards;
+}
+
+.tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  padding:6px 14px;
+  border:1px solid var(--border);
+  color:var(--muted);
+  transition:all 0.2s;
+}
+.tag:hover{border-color:var(--red);color:var(--red)}
+
+.scroll-hint{
+  position:absolute;
+  bottom:32px;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.2em;
+  color:var(--dim);
+  text-transform:uppercase;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  opacity:0;
+  animation:fadeUp 1s 1s ease forwards;
+}
+.scroll-hint::after{
+  content:'';
+  width:1px;
+  height:40px;
+  background:linear-gradient(var(--dim),transparent);
+  animation:pulse 2s infinite;
+}
+
+/* ── STATS BAR ── */
+.stats-bar{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  position:relative;
+  z-index:1;
+}
+.stat-item{
+  padding:32px 24px;
+  text-align:center;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,5vw,3.5rem);
+  color:var(--red);
+  line-height:1;
+  display:block;
+}
+.stat-desc{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.1em;
+  color:var(--muted);
+  text-transform:uppercase;
+  margin-top:8px;
+  display:block;
+  line-height:1.5;
+}
+
+/* ── MAIN CONTENT ── */
+main{
+  max-width:860px;
+  margin:0 auto;
+  padding:80px 24px;
+  position:relative;
+  z-index:1;
+}
+
+/* ── LEDE ── */
+.lede{
+  font-size:clamp(1.15rem,2.5vw,1.45rem);
+  font-weight:300;
+  line-height:1.75;
+  color:#c8ccd8;
+  border-left:3px solid var(--red);
+  padding-left:28px;
+  margin-bottom:72px;
+}
+
+/* ── SECTION HEADER ── */
+.section-header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:48px;
+}
+.section-header::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+.section-label-text{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.3em;
+  color:var(--red);
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+/* ── FAULT CARDS ── */
+.faults{display:flex;flex-direction:column;gap:2px}
+
+.fault-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  overflow:hidden;
+  transition:border-color 0.3s;
+  cursor:pointer;
+}
+.fault-card:hover{border-color:var(--dim)}
+.fault-card.open{border-color:var(--red)}
+
+.fault-header{
+  display:grid;
+  grid-template-columns:80px 1fr 40px;
+  align-items:center;
+  gap:20px;
+  padding:24px 28px;
+}
+
+.fault-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3rem;
+  color:var(--border);
+  line-height:1;
+  transition:color 0.3s;
+}
+.fault-card.open .fault-num,
+.fault-card:hover .fault-num{color:var(--red)}
+
+.fault-title-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.1rem,2.5vw,1.5rem);
+  letter-spacing:0.03em;
+  line-height:1.2;
+  color:var(--text);
+}
+
+.fault-toggle{
+  font-family:'JetBrains Mono',monospace;
+  font-size:18px;
+  color:var(--muted);
+  text-align:center;
+  transition:transform 0.3s,color 0.3s;
+  user-select:none;
+}
+.fault-card.open .fault-toggle{transform:rotate(45deg);color:var(--red)}
+
+.fault-body{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.fault-card.open .fault-body{max-height:1000px}
+
+.fault-inner{
+  padding:0 28px 32px;
+  border-top:1px solid var(--border);
+}
+.fault-inner p{
+  margin-top:16px;
+  color:#a8adb8;
+  font-size:1rem;
+  line-height:1.8;
+}
+
+/* ── CALLOUT ── */
+.callout{
+  background:linear-gradient(135deg,rgba(230,57,70,0.08),rgba(230,57,70,0.03));
+  border-left:3px solid var(--red);
+  padding:20px 24px;
+  margin:20px 0;
+  font-style:italic;
+  font-size:1.05rem;
+  color:#c8ccd8;
+  line-height:1.65;
+  position:relative;
+}
+.callout::before{
+  content:'\201C';
+  position:absolute;
+  top:-8px;
+  left:12px;
+  font-size:3rem;
+  color:rgba(230,57,70,0.2);
+  font-family:'Bebas Neue',sans-serif;
+  line-height:1;
+}
+
+/* ── IMPACT TABLE ── */
+.impact-section{margin-top:80px}
+
+.impact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-top:32px;
+}
+.impact-cell{
+  background:var(--card);
+  padding:28px 24px;
+}
+.impact-icon{
+  font-size:1.8rem;
+  margin-bottom:12px;
+  display:block;
+}
+.impact-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.2rem;
+  letter-spacing:0.05em;
+  color:var(--amber);
+  display:block;
+  margin-bottom:8px;
+}
+.impact-desc{
+  font-size:0.9rem;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+/* ── VERDICT ── */
+.verdict{
+  margin-top:80px;
+  padding:48px;
+  background:linear-gradient(135deg,rgba(230,57,70,0.06),rgba(72,202,228,0.04));
+  border:1px solid rgba(230,57,70,0.3);
+  position:relative;
+  overflow:hidden;
+}
+.verdict::before{
+  content:'VERDICT';
+  position:absolute;
+  top:-20px;
+  right:20px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:8rem;
+  color:rgba(230,57,70,0.04);
+  line-height:1;
+  pointer-events:none;
+}
+.verdict-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.3em;
+  color:var(--red);
+  text-transform:uppercase;
+  margin-bottom:20px;
+  display:block;
+}
+.verdict-text{
+  font-size:clamp(1.1rem,2.5vw,1.4rem);
+  font-weight:300;
+  line-height:1.75;
+  color:#c8ccd8;
+  font-style:italic;
+}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:40px 24px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+.footer-inner{max-width:860px;margin:0 auto}
+.footer-bill{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.2em;
+  color:var(--dim);
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.footer-note{
+  font-size:0.85rem;
+  color:var(--dim);
+  font-style:italic;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes pulse{
+  0%,100%{opacity:0.3}
+  50%{opacity:1}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  .stats-bar{grid-template-columns:1fr}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border)}
+  .stat-item:last-child{border-bottom:none}
+  .fault-header{grid-template-columns:50px 1fr 32px;padding:18px 16px}
+  .fault-inner{padding:0 16px 24px}
+  .verdict{padding:28px 20px}
+  .hero-title{font-size:clamp(3rem,15vw,6rem)}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Uganda · Bill No. 13 · 2026 · Public Interest Analysis</div>
+  <h1 class="hero-title">
+    <span class="thin">WHO DOES IT</span><br>
+    <span class="accent">REALLY</span><br>
+    SILENCE?
+  </h1>
+  <p class="hero-sub">The Protection of Sovereignty Bill — a plain-language breakdown of what it actually means for ordinary people.</p>
+  <div class="hero-tags">
+    <span class="tag">Students</span>
+    <span class="tag">Startups</span>
+    <span class="tag">Aid Workers</span>
+    <span class="tag">Journalists</span>
+    <span class="tag">Civil Society</span>
+    <span class="tag">The Economy</span>
+  </div>
+  <div class="scroll-hint">Scroll to read</div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <span class="stat-num">20 YRS</span>
+    <span class="stat-desc">Max prison sentence<br>for "influencing policy"</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">UGX 400M</span>
+    <span class="stat-desc">Annual foreign funding cap<br>before Minister's approval needed</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">1 OFFICE</span>
+    <span class="stat-desc">The Minister of Internal Affairs<br>controls almost everything</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- LEDE -->
+  <p class="lede reveal">
+    On 13th April 2026, Uganda's Parliament received the Protection of Sovereignty Bill — framed as a shield against foreign interference. A careful reading reveals something far broader: a law that could shut down scholarships, strangle investment, criminalise journalism, and quietly hollow out the very economy it claims to protect.
+  </p>
+
+  <!-- FAULTS -->
+  <div class="section-header reveal">
+    <span class="section-label-text">The Eight Faults — Plain & Simple</span>
+  </div>
+
+  <div class="faults">
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">01</span>
+        <span class="fault-title-text">The Definition of "Foreign Agent" Is a Dragnet</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>Under this bill, you become an "agent of a foreigner" if your work is even <em>indirectly</em> funded, supervised, or influenced by anyone outside Uganda. That is not a narrow definition. It is a dragnet.</p>
+          <p>It legally captures: a student on a foreign scholarship, a researcher with an international grant, an NGO staff member, a journalist funded by a press freedom foundation, a startup with a foreign investor, and even a Ugandan citizen living abroad who sends advice home.</p>
+          <div class="callout">The bill also classifies Ugandan citizens living outside Uganda as "foreigners." Your own citizen, abroad, becomes a foreign agent in their own country.</div>
+          <p>There is no minimum threshold of foreign involvement. No carve-out for education or humanitarian work. Anyone even indirectly touched by foreign money can be swept in.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">02</span>
+        <span class="fault-title-text">Students on Foreign Scholarships Are at Legal Risk</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>Thousands of Ugandan students study on internationally funded scholarships every year — from the African Development Bank, Mastercard Foundation, Commonwealth, European Union, and many others. Under this bill, receiving that funding and then engaging in any advocacy, policy-related work, or community organising could qualify them as unregistered agents of foreigners.</p>
+          <p>The bill caps foreign funding at UGX 400 million (~$107,000 USD) per year without Ministerial written approval. Many scholarship programmes and their institutional partners exceed this. Universities, student organisations, and research centres could be forced to apply for permission just to keep operating.</p>
+          <div class="callout">No approval is guaranteed. The Minister can refuse — and there is no independent body to appeal to.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">03</span>
+        <span class="fault-title-text">International Organisations Cannot Operate Freely</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>Uganda hosts numerous international organisations working on food security, health, climate, education, and humanitarian response. These bodies routinely fund local implementing partners, run community programmes, and work alongside government agencies.</p>
+          <p>Under this bill, every local partner receiving international funding must: register as a foreign agent, declare all funding sources publicly, obtain Ministerial written approval for amounts above the cap, and submit monthly reports to government.</p>
+          <div class="callout">A humanitarian organisation responding to a food crisis or flood cannot wait weeks for Ministerial written approval before deploying aid.</div>
+          <p>The result is not better oversight. It is operational paralysis for the organisations doing the most critical on-the-ground work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">04</span>
+        <span class="fault-title-text">Growing Businesses Are Blocked From International Capital</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>Uganda's startup and SME ecosystem increasingly depends on foreign venture capital, angel investment, accelerator programmes, and impact funding. The bill's UGX 400 million annual cap on foreign financial assistance — without Ministerial approval — effectively blocks most meaningful international investment rounds.</p>
+          <p>A startup raising $500,000 from a foreign investor immediately requires written Ministerial approval. There are no defined timelines for that approval. There is no independent appeal if denied. Investors will not wait, and deals will collapse.</p>
+          <div class="callout">This creates a structural ceiling on Ugandan entrepreneurship — especially in tech, agri-business, and green energy, where foreign investment is often the only available growth capital.</div>
+          <p>The businesses most punished are those on the verge of becoming the next job-creating, tax-paying engines of the economy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">05</span>
+        <span class="fault-title-text">Free Expression and the Press Are Directly Targeted</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>Clause 13 criminalises "economic sabotage" — defined as publishing any information that "weakens or damages the economic system or viability of the country." The penalty is up to 20 years in prison.</p>
+          <p>This is a journalism law wearing the mask of an economic protection clause. Any investigative report exposing corruption, any researcher publishing findings on economic mismanagement, any commentator criticising a government contract — all could be prosecuted under this language.</p>
+          <div class="callout">When governments can imprison journalists for publishing inconvenient economic facts, the public loses its ability to hold power accountable — and corruption wins by default.</div>
+          <p>The bill extends its reach to digital platforms. Social media posts, YouTube videos, and online commentary that challenge government economic decisions could constitute criminal offences.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">06</span>
+        <span class="fault-title-text">Civil Society Is Effectively Outlawed</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>Civil society in Uganda fills gaps the government itself cannot fill: rural health outreach, legal aid, women's rights programming, youth employment, and environmental monitoring. These services reach millions of people every year.</p>
+          <p>Clause 8 requires Cabinet approval for any person or organisation to carry out activities "related to the implementation of Government policy." Since most development work overlaps with government priorities — health, education, agriculture, climate — this means Cabinet must pre-approve most civil society programming in the country.</p>
+          <div class="callout">That is not regulation. That is a veto over Uganda's entire development sector.</div>
+          <p>Uganda's Constitution guarantees freedom of association. This bill makes that guarantee hollow for any organisation with an international partner, donor, or affiliate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">07</span>
+        <span class="fault-title-text">The Economic Consequences Are Self-Defeating</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>Uganda receives significant portions of its national budget from foreign aid and development financing. Bilateral donors, multilateral institutions, and development banks fund roads, schools, vaccines, and agricultural inputs. This bill would make it legally complex — and potentially criminal — for local counterparts to manage that funding without extensive Ministerial clearance.</p>
+          <p>The tax implications compound the damage. Multinational companies, international NGOs, and foreign investors all contribute to Uganda's tax base through corporate tax, VAT, payroll taxes, and import duties. If regulatory risk becomes too high, capital relocates to neighbouring countries. That is lost tax revenue, lost employment, and lost economic growth that cannot be replaced overnight.</p>
+          <div class="callout">You cannot ban the transactions that fund your economy and simultaneously expect the economy to grow.</div>
+          <p>Countries that enacted similar laws — Russia's "foreign agents" legislation, Ethiopia's 2009 CSO law — documented sharp declines in foreign direct investment and development programme effectiveness in the years that followed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fault-card reveal" onclick="toggle(this)">
+      <div class="fault-header">
+        <span class="fault-num">08</span>
+        <span class="fault-title-text">One Minister. Unchecked Power. No Appeals.</span>
+        <span class="fault-toggle">+</span>
+      </div>
+      <div class="fault-body">
+        <div class="fault-inner">
+          <p>The Minister of Internal Affairs is granted extraordinary unilateral powers throughout this bill — with almost no independent checks whatsoever:</p>
+          <p>— Decides alone who is registered as a foreign agent.<br>
+             — Approves or denies all foreign funding above the cap.<br>
+             — Can declare any person or entity a "foreigner" by personal statutory instrument.<br>
+             — Can add new prohibited activities at will.<br>
+             — Regulations need only be "laid before Parliament for information" — not approved.</p>
+          <div class="callout">There is no independent tribunal. No defined timeline for decisions. No structured appeals process. The entire civil and economic ecosystem of Uganda funnels through one political office.</div>
+          <p>Judicial review is theoretically available — but practically inaccessible to most citizens and organisations who cannot afford prolonged litigation against the state.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHO IS AFFECTED -->
+  <div class="impact-section reveal">
+    <div class="section-header">
+      <span class="section-label-text">Who Is Affected</span>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-cell">
+        <span class="impact-icon">🎓</span>
+        <span class="impact-name">Students</span>
+        <p class="impact-desc">Scholarship recipients who engage in any advocacy or policy work risk classification as unregistered foreign agents.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-icon">🚀</span>
+        <span class="impact-name">Startups</span>
+        <p class="impact-desc">Any international investment round above ~$107K requires Ministerial written approval — with no guaranteed timeline or appeal.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-icon">🌍</span>
+        <span class="impact-name">Aid Organisations</span>
+        <p class="impact-desc">Humanitarian operations requiring rapid deployment face bureaucratic paralysis under mandatory approval requirements.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-icon">📰</span>
+        <span class="impact-name">Journalists</span>
+        <p class="impact-desc">Reporting that "weakens" economic perception — however truthful — carries a potential 20-year prison sentence.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-icon">🤝</span>
+        <span class="impact-name">Civil Society</span>
+        <p class="impact-desc">Development organisations working on health, education, and climate require Cabinet pre-approval to operate.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-icon">🇺🇬</span>
+        <span class="impact-name">All Ugandans</span>
+        <p class="impact-desc">Reduced foreign investment, fewer services, lower tax revenue, and a silenced press affect every citizen — not just the targeted groups.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict reveal">
+    <span class="verdict-label">The Bottom Line</span>
+    <p class="verdict-text">
+      Every country has the right to protect its sovereignty. But sovereignty is not protected by silencing students, starving businesses of capital, criminalising journalists, and outlawing aid. A law that makes it harder to study, harder to invest, harder to report, and harder to help — is not protecting the people. It is protecting the system from the people.
+    </p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-bill">Bill No. 13 · Uganda Gazette No. 39, Vol. CXIX · 13 April 2026</p>
+    <p class="footer-note">Analysis prepared for public interest. Read the full bill and form your own view.</p>
+  </div>
+</footer>
+
+<script>
+// Toggle accordion
+function toggle(card){
+  const wasOpen = card.classList.contains('open');
+  document.querySelectorAll('.fault-card').forEach(c => c.classList.remove('open'));
+  if(!wasOpen) card.classList.add('open');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Open first card by default
+document.querySelector('.fault-card').classList.add('open');
+</script>
+</body>
+</html>
